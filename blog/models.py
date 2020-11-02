@@ -29,6 +29,8 @@ class Article(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     category = models.ForeignKey('category', on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile, on_delete=models.PROTECT)
+    # 'promote' is for choise articles that want to show in slider
+    promote = models.BooleanField(default=False)
 
 
 class Category(models.Model):
